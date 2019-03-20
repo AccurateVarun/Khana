@@ -1,0 +1,61 @@
+<!-- <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu Group</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header> -->
+<ion-header>
+    <ion-toolbar  color="primary">
+    <div style="float:left" >
+      <div style="float:left">
+          <ion-buttons slot="start">
+              <ion-back-button></ion-back-button>
+            </ion-buttons>
+      </div>
+        
+        <div style="float: right;">
+            <ion-title>Menu Group</ion-title>
+        </div>
+          
+    </div>
+    <div class="center" >
+        <ion-img style="width: 127px;height:70px; " src="assets/img/logo.png"></ion-img>
+    </div>
+    
+</ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-grid>
+          <ion-row 
+          *ngFor="let groups of groupMenuGroups; let idx=index">
+              <ion-col 
+              width-50 style="cursor: pointer;" 
+              *ngFor="let group of groups;" 
+              [routerLink]="['/menu-group', group.ID]"
+              >
+                <label>{{ group.NAME }}</label>
+                <hr>
+                <img [src]= "getImgUrl(group.NAME)"
+                     alt="{{ group.NAME }}"
+                     class="img-responsive"
+                    >
+                  <!-- <ion-card>
+                      <ion-card-header>
+                        <ion-card-subtitle>{{category.NAME}}</ion-card-subtitle>
+                        <ion-card-title>{{category.NAME}}</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                          <img
+                          [src]= localImgUrl
+                          alt="{{ category.NAME }}"
+                          class="img-responsive"
+                          >
+                      </ion-card-content>
+                    </ion-card> -->
+                </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-content>

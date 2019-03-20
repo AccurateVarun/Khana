@@ -1,0 +1,37 @@
+
+
+<ion-header>
+    <ion-toolbar  color="primary">
+      
+      <div style="float:left" >
+          <ion-title >Table Selection</ion-title>
+      </div>
+      <div class="center" >
+          <ion-img style="width: 127px;height:70px; " src="assets/img/logo.png"></ion-img>
+      </div>
+      
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+    <div class="grid" >
+        <div class="object"  *ngFor="let item of tables">
+    
+            <!-- <ion-button *ngIf="item.OCCUPIED === 0" size="large"  color="success">{{item.NUMBER}}</ion-button>
+            <ion-button *ngIf="item.OCCUPIED === 1" size="large"  color="danger">{{item.NUMBER}}</ion-button> -->
+            <ion-button [routerLink]="['/menu', item.NUMBER]"  *ngIf="item.OCCUPIED === 1" style="height: 70px;" color="light"> <ion-img src="assets/icon/TableRed.png"></ion-img></ion-button>
+            <ion-button [routerLink]="['/menu', item.NUMBER]" *ngIf="item.OCCUPIED === 0" style="height: 70px;" color="light"> <ion-img src="assets/icon/TableGreen.png"></ion-img></ion-button>
+        <!-- <ion-button color="dark">{{item.NUMBER}}</ion-button> -->
+      </div> 
+    </div>
+  
+</ion-content>
+<ion-footer >
+    <ion-toolbar color="primary">
+      <ion-title></ion-title>
+      <ion-button> Menu</ion-button>
+      <ion-button> Discounts</ion-button>
+      <ion-button> Offers</ion-button>
+    </ion-toolbar>
+  </ion-footer>

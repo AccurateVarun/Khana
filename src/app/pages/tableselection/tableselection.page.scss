@@ -1,0 +1,47 @@
+.grid{
+    // padding: 2% 2% 0;
+    padding: 5% 10% 10% 20%;
+    text-align: justify;
+    font-size: 0;
+    background: white;
+  }
+
+    
+  .grid:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .grid .object,
+  .grid .gap{
+    display: inline-block;
+    width: 49%;
+  }
+  
+  .grid .object{
+    text-align: left;
+    background:white;
+    margin-bottom: 2%;
+    /*display: none; <-- uncomment this rule for use with MixItUp */
+  }
+  
+  .grid .object:before{
+    content: '';
+    display: inline-block;
+    padding-top: 20%;
+  }
+  
+  @media all and (min-width: 420px){
+    .grid .object,
+    .grid .gap{
+      width: 32%;
+    }
+  }
+  
+  @media all and (min-width: 640px){
+    .grid .object{
+      width: 23.5%;
+    }
+
+  }
